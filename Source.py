@@ -1,3 +1,4 @@
+
 import numpy as np
 
 
@@ -8,4 +9,18 @@ def create_board():
 
 
 board = create_board()
-print(board)
+print(board)  # Command to print the board
+turn = 0  # By default the turn must start with player 1
+game_over = False
+
+while not game_over:
+    if turn == 0:
+        # Ask for player 1 input
+        selection = int(input("Enter the selection for player 1 : "))
+
+    else:
+        # Ask for player 2 input
+        selection = int(input("Enter the selection for player 2 : "))
+
+    turn += 1
+    turn %= 2
