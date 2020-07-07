@@ -1,6 +1,6 @@
 import numpy as np
 
-R_COUNT = 5
+R_COUNT = 6
 C_COUNT = 7
 
 
