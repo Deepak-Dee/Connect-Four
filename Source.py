@@ -1,12 +1,12 @@
-import numpy as np
+import numpy
 
-R_COUNT = 6
-C_COUNT = 7
+ROW = 6  # Number of rows
+COlUMN = 7  # Number of columns
 
 
 # Function for creating the board, Here statically the board is of size 6 X 7
 def create_board():
-    board = np.zeros((R_COUNT, C_COUNT))
+    board = numpy.zeros((ROW, COlUMN))
     return board
 
 
@@ -22,13 +22,17 @@ def valid_location(board, col):
 
 # Function to check whether the next row is open for dropping a piece
 def open_row(board, col):
-    for r in range(R_COUNT):
+    for r in range(ROW):
         if board[r][col] == 0:
             return r
 
 
+# Function to flip the board upside down
+def update_board(board):
+    print(numpy.flip(board, 0))
+
+
 board = create_board()
-print(board)
 turn = 0  # By default the turn must start with player 1
 game_over = False  # Loop variable
 
@@ -49,6 +53,6 @@ while not game_over:
             row = open_row(board, col)
             piece_drop(board, row, col, 2)
 
-    print(board)
+    print(update_board(board))
     turn += 1
     turn %= 2
