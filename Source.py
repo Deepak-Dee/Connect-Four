@@ -32,6 +32,11 @@ def update_board(board):
     print(numpy.flip(board, 0))
 
 
+# Function to check for winning the game
+def win_game():
+    pass
+
+
 board = create_board()
 turn = 0  # By default the turn must start with player 1
 game_over = False  # Loop variable
